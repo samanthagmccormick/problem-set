@@ -1,27 +1,26 @@
 // letterCapitalize
 
 var letterCapitalize = function(x) {
-	// Split string into separate arrays for each word
-	newArray = x.split(" ");
-	var newestArray = [];
 
-	// Print it
-	console.log(newArray);
+	// Set x to val to protect x's original value
+	val = x;
 
-	for (i = 0; i < newArray.length; i++) {
-		// Split the smaller array into individual letters
-		anotherArray = newArray[i].split("");
+	// Declare an empty array (global)
+	newVal = [];
 
-		// Capitalize each anotherArray[0] (first letter)
-		anotherArray[0] = anotherArray[0].toUpperCase();
+	// Set val to be x, split up by spaces (put each word into a new array)
+	val = val.split(" ");
 
-		// Join each letter back together into anotherArray
-		anotherArray = console.log(anotherArray.join(""));
-	};
+	// For loop to go thru each new array and add on the newly transformed words
+	for (var i = 0; i < val.length; i++) {
+		newVal = newVal + val[i].substring(0,1).toUpperCase() + 
+		val[i].substring(1, val[i].length) + " ";
+	}  // End for loop
 
-return newestArray;
+	x = newVal;   // Set x to be the newVal
+	return x;     // return x
 
-};
+}
 
 console.log(letterCapitalize("hello world you are nice"));
 
@@ -33,15 +32,12 @@ var wordCount = function(x) {
 	// Split string into separate arrays for each word
 	newArray = x.split(" ");
 
-	// Print it
-	console.log(newArray);
-
 	// Count how many values are in the array
 	return newArray.length;
 
 };
 
-console.log(wordCount("hello my name is Samantha"));
+console.log("Number of words you entered: " + wordCount("hello my name is Samantha"));
 
 
 // Bonus: PrimeTime
@@ -63,8 +59,12 @@ var primeTime = function(x) {
 			return false;
 		else 
 			return true;
-	};
+	}
 	
 };
+
+console.log("primeTime(1): " + primeTime(1));
+console.log("primeTime(2): " + primeTime(2));
+console.log("primeTime(3): " + primeTime(3));
 
 
